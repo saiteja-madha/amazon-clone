@@ -6,7 +6,7 @@ function Home() {
     return (
         <div className="home">
             <div className="home__container">
-                <img className="home__banner" src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Fashion/EVENT/WRS_Dec/GW/ATF/Day5/Eng-Unrec-1500-600._CB414118618_.jpg" alt="Banner Image"/>
+                <img className="home__banner" src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Christmas20/GW/new/Christmas-GW-Hero-PC1x._CB413564947_.jpg" alt="Banner"/>
             </div>
 
             <div className="home__row">

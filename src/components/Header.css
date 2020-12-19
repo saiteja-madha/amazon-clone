@@ -13,6 +13,7 @@
     object-fit: contain;
     margin: 0 20px;
     margin-top: 18px;
+    padding: 4px 0 0 0;
 }
 
 .header__search {
@@ -27,6 +28,7 @@
     padding: 10px;
     border: none;
     width: 100%;
+    border-radius: 2px;
 }
 
 .header__searchIcon {
