@@ -10,16 +10,16 @@ function Home() {
             </div>
 
             <div className="home__row">
-                <Product title="PICTEK Gaming Mouse Wired [7200 DPI] [Programmable] [Breathing Light]" price={15.99} image="https://images-na.ssl-images-amazon.com/images/I/61gxUsLtlyL._AC_SL1280_.jpg" rating={5}/>
-                <Product title="Xbox Wireless Controller - Black" price={61.30} image="https://images-na.ssl-images-amazon.com/images/I/41LO2OX6pRL.jpg" rating={4}/>
-                <Product title="PlayStation 4 Pro 1TB Console" price={440.99} image="https://images-na.ssl-images-amazon.com/images/I/41GGPRqTZtL._AC_.jpg" rating={5}/>
+                <Product id='1' title="PICTEK Gaming Mouse Wired [7200 DPI] [Programmable] [Breathing Light]" price={15.99} image="https://images-na.ssl-images-amazon.com/images/I/61gxUsLtlyL._AC_SL1280_.jpg" rating={5}/>
+                <Product id='2' title="Xbox Wireless Controller - Black" price={61.30} image="https://images-na.ssl-images-amazon.com/images/I/41LO2OX6pRL.jpg" rating={4}/>
+                <Product id='3' title="PlayStation 4 Pro 1TB Console" price={440.99} image="https://images-na.ssl-images-amazon.com/images/I/41GGPRqTZtL._AC_.jpg" rating={5}/>
             </div>
 
             <div className="home__row">
-                <Product title="Xbox Wireless Controller - White" price={15.99} image="https://images-na.ssl-images-amazon.com/images/I/71WX6wVepIL._SL1500_.jpg" rating={5}/>
-                <Product title="PICTEK TKL Mechanical Gaming Keyboard, RGB LED Rainbow Backlit" price={31.30} image="https://images-na.ssl-images-amazon.com/images/I/71eurRBO7iL._AC_SL1500_.jpg" rating={4}/>
-                <Product title="Xbox Wireless Controller - Green" price={440.99} image="https://images-na.ssl-images-amazon.com/images/I/61s90CJzEzL._SL1200_.jpg" rating={5}/>
-                <Product title="ASUS TUF TUF506IU-ES74 Gaming A15 Gaming Laptop, 15.6” 144Hz" price={440.99} image="https://images-na.ssl-images-amazon.com/images/I/91MW2X7lrfL._AC_SL1500_.jpg" rating={5}/>
+                <Product id='4' title="Xbox Wireless Controller - White" price={15.99} image="https://images-na.ssl-images-amazon.com/images/I/71WX6wVepIL._SL1500_.jpg" rating={5}/>
+                <Product id='5' title="PICTEK TKL Mechanical Gaming Keyboard, RGB LED Rainbow Backlit" price={31.30} image="https://images-na.ssl-images-amazon.com/images/I/71eurRBO7iL._AC_SL1500_.jpg" rating={4}/>
+                <Product id='6' title="Xbox Wireless Controller - Green" price={440.99} image="https://images-na.ssl-images-amazon.com/images/I/61s90CJzEzL._SL1200_.jpg" rating={5}/>
+                <Product id='7' title="ASUS TUF TUF506IU-ES74 Gaming A15 Gaming Laptop, 15.6” 144Hz" price={440.99} image="https://images-na.ssl-images-amazon.com/images/I/91MW2X7lrfL._AC_SL1500_.jpg" rating={5}/>
             </div>
 
             <div className="home__row">

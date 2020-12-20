@@ -24,7 +24,7 @@ function Header() {
         <div className="header">
 
             <Link to="/">
-                <img className="header__logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="Amazon Logo"/>
+                <img className="header__logo" src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="Amazon Logo"/>
             </Link>
             
             <div className="header__search">
