@@ -53,7 +53,7 @@ function Nav() {
             </div>
 
             <div className="nav__right">
-                <Link to='/login'>
+                <Link to={!user && '/login'}>
                     <div onClick={handleAuthentication} className="nav__option">
                         <span className="nav__optionLineOne">Hello, {user ? 'Sign out' : 'Sign In'}</span>
                         <span className="nav__optionLineTwo">Account & Lists</span>
