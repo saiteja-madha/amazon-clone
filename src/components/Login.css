@@ -26,8 +26,10 @@
 }
 
 .login__container > h1 {
-    font-weight: 500;
     margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.2;
 }
 
 .login__container > form > h5 {
@@ -35,15 +37,51 @@
 }
 
 .login__container > form > input {
-    height: 30px;
+    height: 31px;
     margin-bottom: 10px;
     background-color: white;
     width: 98%;
+    line-height: normal;
+    padding: 3px 7px;
+    border-radius: 5px;
+    border: 1px solid #a6a6a6;
+    border-top-color: #949494;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(255,255,255,.5), 0 1px 0 rgba(0,0,0,.07) inset;
+    outline: 0;
+}
+
+p > span {
+    text-decoration: none;
+    color: #0066c0;
+}
+
+p > span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #c45500;
+}
+
+.login__container > form > input:focus {
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
 }
 
 .login__container > p {
     margin-top: 10px;
     font-size: 12px;
+}
+
+.login__signUpMsg {
+    color: #767676;
+    line-height: 1;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: #fff;
+    padding: 0 8px 0 7px;
+    align-self: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 .login__signInButton {
@@ -56,6 +94,7 @@
     padding: 5px;
     width: 100%;
     height: 30px;
+    cursor: pointer;
 }
 
 .login__registerButton {
@@ -65,4 +104,11 @@
     border: 1px solid;
     margin-top: 10px;
     border-color: darkgray;
+
+    cursor: pointer;
+    background-color: #dcdfe3;
+    background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+    height: 29px;
+    box-shadow: 0 1px 0 rgba(255,255,255,.6) inset;
+    border-radius: 2px;
 }

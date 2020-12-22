@@ -40,9 +40,9 @@ function Login() {
                 />
             </Link>
             <div className='login__container'>
-                <h1>Sign in</h1>
+                <h1>Login</h1>
                 <form>
-                    <h5>E-mail</h5>
+                    <h5>Email</h5>
                     <input type='text' value={email} onChange={e => setEmail(e.target.value)}/>
 
                     <h5>Password</h5>
@@ -51,8 +51,10 @@ function Login() {
                     <button type='submit' onClick={signIn} className='login__signInButton'>Sign In</button>
                 </form>
                 <p>
-                    By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.
+                    By continuing, you agree to <span>Amazon's Conditions of Use</span> and <span>Privacy Notice.</span>
                 </p>
+
+                <span className='login__signUpMsg'>New to Amazon?</span>
 
                 <button onClick={register} className='login__registerButton'>Create your Amazon Account</button>
             </div>
