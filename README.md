@@ -1,6 +1,6 @@
 <h1 align="center"> Amazon Clone</h1>
 <p align="center">
-  <img style="text-align:center" src="https://raw.githubusercontent.com/saiteja-madha/amazon-clone/master/public/amazon-gif.gif" />
+  <img style="text-align:center" src="https://github.com/saiteja-madha/amazon-clone/blob/master/public/logo-gif.gif" />
 </p>
 
 # Getting Started with Create React App
