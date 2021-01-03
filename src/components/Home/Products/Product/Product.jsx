@@ -39,29 +39,29 @@ const Product = ({ product }) => {
             type: 'ADD_TO_BASKET',
             item: {
                 id: product.id,
-                title: product.title,
-                image: product.image,
-                price: product.price,
-                rating: product.rating
+                title: product.data.title,
+                image: product.data.image,
+                price: product.data.price,
+                rating: product.data.rating
             }
         })
     }
 
     return (
     <Card className={classes.root}>
-        <CardMedia className={classes.media} image={product.image} title={product.title} />
+        <CardMedia className={classes.media} image={product.data.image} title={product.data.title} />
         <CardContent>
         <div className={classes.cardContent}>
           <Typography className={classes.title} variant="h5" component="h2">
-            {product.title}
+            {product.data.title}
           </Typography>
           <Typography className={classes.price} variant="h5" component="h2">
-            ${product.price}
+            ${product.data.price}
           </Typography>
         </div>
         </CardContent>
         <div className={classes.rating}>
-            {Array(product.rating)
+            {Array(product.data.rating)
                 .fill()
                 .map((_, i ) => (
                 <p key={i}><StarIcon/></p>

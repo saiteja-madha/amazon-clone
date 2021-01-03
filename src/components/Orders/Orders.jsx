@@ -25,7 +25,7 @@ function Orders() {
         setOrders([])
     }
 
-  }, [user])
+  }, [user]) 
 
     return (
         <div className='orders'>
