@@ -17,6 +17,18 @@ export default makeStyles((theme) => ({
     marginTop: 18,
     marginRight: 10,
   },
+  navBarLocation: {
+    display: 'flex',
+    alignItems: 'center',
+    cursor: 'pointer',
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
+  },
+  navBarLocationIcon: {
+    color: 'white',
+    marginRight: '-5px',
+  },
   navBarCategory: {
     fontSize: 13,
     padding: 10,
@@ -48,14 +60,17 @@ export default makeStyles((theme) => ({
     flexDirection: 'column',
     marginLeft: 10,
     marginRight: 10,
+    '&:hover': {
+      cursor: 'pointer',
+    }
   },
   navBarOptionOne: {
     fontSize: 12,
-    height: 17, 
+    height: 17,
   },
   navBarOptionTwo: {
     fontSize: 14,
-    fontWeight: 700, 
+    fontWeight: 700,
   },
   optionBasket: {
     display: 'flex',

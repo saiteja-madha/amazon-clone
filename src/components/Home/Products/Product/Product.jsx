@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, CardMedia, CardContent, CardActions, Typography, IconButton, TextField, MenuItem } from '@material-ui/core'
 import StarIcon from '@material-ui/icons/Star'
 import { AddShoppingCart } from '@material-ui/icons'
-import { useStateValue } from '../../../contexts/StateProvider'
+import { useStateValue } from '../../../../contexts/StateProvider'
 import useStyles from './styles'
 
 const quantities = [

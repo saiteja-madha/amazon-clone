@@ -1,8 +1,9 @@
 import React from 'react'
-import { useStateValue } from '../contexts/StateProvider';
-import './CheckoutItem.css'
+import { useStateValue } from '../../../contexts/StateProvider';
+import './styles.css'
 
-function CheckoutItem({id, image, title, price, rating}) {
+function PaymentItem({id, image, title, price, rating}) {
+
     const [, dispatch] = useStateValue();
     const removeFromBasket = () => {
         dispatch({
@@ -12,15 +13,15 @@ function CheckoutItem({id, image, title, price, rating}) {
     }
 
     return (
-        <div className="checkoutItem">
+        <div className="paymentItem">
             <img src={image} alt={title}/>
-            <div className="checkoutItem__info">
-                <p className="checkoutItem__title">{title}</p>
-                <p className="checkoutItem__price">
+            <div className="paymentItem__info">
+                <p className="paymentItem__title">{title}</p>
+                <p className="paymentItem__price">
                     <small>$</small>
                     <strong>{price}</strong>
                 </p>
-                <div className="checkoutItem__rating">
+                <div className="paymentItem__rating">
                         {Array(rating)
                         .fill()
                         .map((_, i ) => (
@@ -34,4 +35,4 @@ function CheckoutItem({id, image, title, price, rating}) {
     )
 }
 
-export default CheckoutItem
+export default PaymentItem

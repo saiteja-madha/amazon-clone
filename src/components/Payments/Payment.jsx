@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import './Payment.css'
-import CheckoutItem from './CheckoutItem'
+import './styles.css'
+import PaymentItem from './PaymentItem/PaymentItem'
 import CurrencyFormat from 'react-currency-format';
-import { useStateValue } from '../contexts/StateProvider'
+import { useStateValue } from '../../contexts/StateProvider'
 import { Link, useHistory } from 'react-router-dom'
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js'
-import { getBasketTotal } from "../contexts/reducer";
-import axios from '../lib/axios'
-import { db } from '../lib/firebase'
+import { getBasketTotal } from "../../contexts/reducer";
+import axios from '../../lib/axios'
+import { db } from '../../lib/firebase'
 
 function Payment() {
     const [{basket, user}, dispatch] = useStateValue();
@@ -42,7 +42,7 @@ function Payment() {
         event.preventDefault();
         setProcessing(true);
 
-        const payload = await stripe.confirmCardPayment(clientSecret, {
+        await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: elements.getElement(CardElement)
             }
@@ -105,7 +105,7 @@ function Payment() {
                     </div>
                     <div className='payment__items'>
                         {basket.map(item => (
-                            <CheckoutItem
+                            <PaymentItem
                                 key={item.id}
                                 id={item.id}
                                 title={item.title}

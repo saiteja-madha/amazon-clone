@@ -5,14 +5,14 @@ import IconButton from '@material-ui/core/IconButton'
 import Badge from '@material-ui/core/Badge'
 import MenuItem from '@material-ui/core/MenuItem'
 import Menu from '@material-ui/core/Menu'
+
 import MoreIcon from '@material-ui/icons/MoreVert'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
-
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 import SearchIcon from '@material-ui/icons/Search'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import HistoryIcon from '@material-ui/icons/History'
-
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useStateValue } from '../../contexts/StateProvider';
 import { auth } from '../../lib/firebase';
 
@@ -21,19 +21,22 @@ import useStyles from './styles'
 const NavBar = () => {
   const classes = useStyles();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  const [{basket, user},] = useStateValue();
+  const [{ basket, user },] = useStateValue();
+  const history = useHistory();
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleAuthentication = () => {
     console.log('HANDLE AUTHENTICATION', user)
-      if (user) {
-        auth.signOut().then(_ => {
-          console.log('LOGGED OUT')
-        }).catch(e => {
-          console.warn(e.message)
-        })
-      }
+    if (user) {
+      auth.signOut().then(_ => {
+        console.log('LOGGED OUT')
+      }).catch(e => {
+        console.warn(e.message)
+      })
+    } else {
+      history.push('/login');
+    }
   }
 
   const handleMobileMenuClose = () => {
@@ -55,28 +58,26 @@ const NavBar = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <Link to={!user && '/login'} className={classes.linkStyle}>
-        <MenuItem>
-          <IconButton color="inherit">
-              <ExitToAppIcon />
+      <MenuItem onClick={handleAuthentication}>
+          <IconButton color='inherit'>
+            <ExitToAppIcon />
           </IconButton>
           <p>{user ? 'Sign out' : 'Sign In'}</p>
-        </MenuItem>
-      </Link>
+      </MenuItem>
       <Link to='/orders' className={classes.linkStyle}>
         <MenuItem>
-          <IconButton color="inherit">
-              <HistoryIcon />
+          <IconButton color='inherit'>
+            <HistoryIcon />
           </IconButton>
           <p>Returns & Orders</p>
         </MenuItem>
       </Link>
-      <Link to="/checkout" className={classes.linkStyle}>
+      <Link to='/cart' className={classes.linkStyle}>
         <MenuItem>
-          <IconButton color="inherit">
-          <Badge badgeContent={basket?.length} color="secondary">
-            <ShoppingCartIcon />
-          </Badge>
+          <IconButton color='inherit'>
+            <Badge badgeContent={basket?.length} color='secondary'>
+              <ShoppingCartIcon />
+            </Badge>
           </IconButton>
           <p>Cart</p>
         </MenuItem>
@@ -86,36 +87,41 @@ const NavBar = () => {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static" className={classes.navBar}>
+      <AppBar position='static' className={classes.navBar}>
         <Toolbar>
-          <Link to="/" className={classes.linkStyle}>
-            <img className={classes.navLogo} src='../../img/amazon_nav.png' alt="Amazon Logo"/>
+          <Link to='/' className={classes.linkStyle}>
+            <img className={classes.navLogo} src='../../img/amazon_nav.png' alt='Amazon Logo' />
           </Link>
+          <div className={classes.navBarLocation}>
+            <LocationOnIcon className={classes.navBarLocationIcon} />
+            <div className={classes.navBarOption}>
+              <span className={classes.navBarOptionOne}>Hello</span>
+              <span className={classes.navBarOptionTwo}>Select your address</span>
+            </div>
+          </div>
           <div className={classes.navBarStretch}>
             <select className={classes.navBarCategory}>
-              <option value="all">All</option>
-              <option value="deals">Deals</option>
+              <option value='all'>All</option>
+              <option value='deals'>Deals</option>
             </select>
-            <input className={classes.navBarsearchInput} type="text" />
-            <SearchIcon className={classes.navBarSearchIcon}/>
+            <input className={classes.navBarsearchInput} type='text' />
+            <SearchIcon className={classes.navBarSearchIcon} />
           </div>
           <div className={classes.sectionDesktop}>
-            <Link to={!user && '/login'} className={classes.linkStyle}>
-              <div onClick={handleAuthentication} className={classes.navBarOption}>
-                <span className={classes.navBarOptionOne}>Hello, {user ? 'Sign out' : 'Sign In'}</span>
-                <span className={classes.navBarOptionTwo}>Account & Lists</span>
-              </div>
-            </Link>
+            <div onClick={handleAuthentication} className={classes.navBarOption}>
+              <span className={classes.navBarOptionOne}>Hello, {user ? 'Sign out' : 'Sign In'}</span>
+              <span className={classes.navBarOptionTwo}>Account & Lists</span>
+            </div>
             <Link to='/orders' className={classes.linkStyle}>
               <div className={classes.navBarOption}>
                 <span className={classes.navBarOptionOne}>Returns</span>
                 <span className={classes.navBarOptionTwo}>& Orders</span>
               </div>
             </Link>
-            <Link to="/checkout" className={classes.linkStyle}>
+            <Link to='/cart' className={classes.linkStyle}>
               <div className={classes.optionBasket}>
-                <Badge badgeContent={basket?.length} color="secondary">
-                  <ShoppingCartIcon />
+                <Badge badgeContent={basket?.length} color='secondary'>
+                  <ShoppingCartIcon style={{ marginLeft: 2, marginRight: '-5px' }} />
                 </Badge>
                 <div className={classes.navBarOption}>
                   <span className={classes.navBarOptionTwo}>Cart</span>
@@ -125,11 +131,11 @@ const NavBar = () => {
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
-              aria-label="show more"
+              aria-label='show more'
               aria-controls={mobileMenuId}
-              aria-haspopup="true"
+              aria-haspopup='true'
               onClick={handleMobileMenuOpen}
-              color="inherit"
+              color='inherit'
             >
               <MoreIcon />
             </IconButton>

@@ -1,7 +1,6 @@
 import React from 'react'
-import './Home.css'
-import Product from './Product'
 import Products from './Products/Products'
+import './styles.css'
 
 const products = [{
     id: 1,
@@ -52,14 +51,26 @@ const products = [{
     price: 440.99,
     rating: 5,
 },
+{
+    id: 8,
+    title: "ASUS Cerberus GeForce GTX 1050 Ti 4GB OC Edition",
+    image: "https://images-na.ssl-images-amazon.com/images/I/91sPs0ELPnL._SL1500_.jpg",
+    price: 150.99,
+    rating: 3,
+},
+{
+    id: 9,
+    title: "HyperX Fury 8GB 3200MHz DDR4",
+    image: "https://images-na.ssl-images-amazon.com/images/I/71%2ByJbBOZCL._SL1500_.jpg",
+    price: 50.49,
+    rating: 4,
+}
 ]
 
 function Home() {
     return (
         <div className="home">
-            <div className="home__container">
-                <img className="home__banner" src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Christmas20/GW/new/Christmas-GW-Hero-PC1x._CB413564947_.jpg" alt="Banner"/>
-            </div>
+            <img className="home__banner" src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Christmas20/GW/new/Christmas-GW-Hero-PC1x._CB413564947_.jpg" alt="Banner"/>
             <Products products={products}/>
         </div>
     )

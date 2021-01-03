@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { db } from "../lib/firebase";
-import './Orders.css'
-import { useStateValue } from "../contexts/StateProvider";
-import Order from './Order'
+import React, { useState, useEffect } from 'react'
+import { db } from "../../lib/firebase";
+import { useStateValue } from "../../contexts/StateProvider";
+import Order from './Order/Order'
+import './styles.css'
 
 function Orders() {
   const [{ user }, ] = useStateValue();
@@ -30,14 +30,13 @@ function Orders() {
     return (
         <div className='orders'>
             <h1>Your Orders</h1>
-
             <div className='orders__order'>
-                {orders?.map(order => (
-                    <Order order={order} />
+                {orders?.map((order,index) => (
+                    <Order key={index} order={order} />
                 ))}
             </div>
         </div>
     )
 }
 
-export default Orders
+export default Orders 

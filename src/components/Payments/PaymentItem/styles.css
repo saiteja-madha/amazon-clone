@@ -1,33 +1,28 @@
-.checkoutItem {
+.paymentItem {
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid #DDD;
 }
-
-.checkoutItem > img {
+.paymentItem > img {
     height: 180px;
     width: 180px;
     object-fit: contain;
 }
-
-.checkoutItem__info {
+.paymentItem__info {
     padding-left: 20px;
 }
-
-.checkoutItem__title {
+.paymentItem__title {
     color: #007185;
     font-size: 18px;
     line-height: 24px;
     font-weight: 700;
 }
-
-.checkoutItem__rating {
+.paymentItem__rating {
     display: flex;
 }
-
-.checkoutItem__info > button {
+.paymentItem__info > button {
     background: #f0c14b;
     border: 1px solid;
     margin-top: 10px;
